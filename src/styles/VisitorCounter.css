@@ -1,0 +1,185 @@
+.visitor-counter {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  max-width: 300px;
+  margin: 0 auto;
+  min-height: 100px;
+}
+
+.visitor-counter.pulse {
+  animation: pulse 0.5s ease-in-out;
+}
+
+.counter-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(46, 204, 113, 0.2), rgba(241, 196, 15, 0.2));
+  padding: 0.5rem;
+  flex-shrink: 0;
+}
+
+.counter-icon svg {
+  width: 24px;
+  height: 24px;
+  color: #2ecc71;
+}
+
+.counter-content {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  flex-grow: 1;
+}
+
+.counter-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #2ecc71, #f1c40f);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1;
+}
+
+.counter-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  opacity: 0.8;
+  margin-top: 0.25rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.counter-loading {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+}
+
+.counter-sparkles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.sparkle {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.visitor-counter.pulse .sparkle {
+  animation: sparkle 1s ease-out;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes sparkle {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  10% {
+    opacity: 1;
+    width: 6px;
+    height: 6px;
+  }
+  100% {
+    transform: translate(var(--tx), var(--ty));
+    opacity: 0;
+    width: 2px;
+    height: 2px;
+  }
+}
+
+@media (max-width: 768px) {
+  .visitor-counter {
+    padding: 1.25rem 1.5rem;
+    gap: 1rem;
+    max-width: 260px;
+  }
+  
+  .counter-value {
+    font-size: 1.5rem;
+  }
+  
+  .counter-label {
+    font-size: 0.75rem;
+  }
+}
+.counter-error {
+  color: #ff6b6b;
+  font-size: 0.9rem;
+}
+
+/* Ensure CORS-related elements are visible */
+.counter-loading, .counter-error {
+  min-height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Error and Loading States */
+.counter-error {
+  color: #ff6b6b;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.counter-loading {
+  color: #aaa;
+  font-style: italic;
+}
+
+/* Make sure container has consistent height */
+.visitor-counter {
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+}
+.retry-button {
+  margin-left: 10px;
+  padding: 2px 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.retry-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.counter-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

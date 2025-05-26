@@ -1,0 +1,5 @@
+/* src/components/common/ContentWrapper.css */
+.content-wrapper {
+    padding-top: var(--header-height);
+    min-height: calc(100vh - var(--header-height));
+  }

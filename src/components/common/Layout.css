@@ -1,0 +1,15 @@
+:root {
+    --header-height: 80px; /* Adjust based on your header height */
+    --footer-height: 300px; /* Adjust based on your footer height */
+  }
+  
+  .layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding-top: var(--header-height);
+  }
