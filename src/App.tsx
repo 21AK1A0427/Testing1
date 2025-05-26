@@ -26,11 +26,13 @@ function App() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/sponsors" element={<Sponsors />} />
           <Route path="/contact" element={<Contact />} />
-          
+
+          {/* Add this line to redirect unknown routes to home */}
+        
         </Routes>
       </main>
       <Footer />
-      </div>
+    </div>
   );
 }
 
